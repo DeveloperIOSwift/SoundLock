@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>PostNotifcation</key>
+			<string>com.yakir.soundlock-prefsreload</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.yakir.soundlock</string>
+			<key>key</key>
+			<string>kUseDefaultLSCode</string>
+			<key>label</key>
+			<string>Use Default Sound</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string> </string>
+			<key>label</key>
+			<string>Choose sound</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>None</string>
+			<key>defaults</key>
+			<string>com.yakir.soundlock</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>kLSCode</string>
+			<key>label</key>
+			<string>Passcode Sounds</string>
+			<key>set</key>
+			<string>setAndPreview:forSpecifier:</string>
+			<key>title</key>
+			<string>Passcode Sounds</string>
+			<key>titlesDataSource</key>
+			<string>getData:</string>
+			<key>valuesDataSource</key>
+			<string>getData:</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>Passcode key sounds</string>
+</dict>
+</plist>

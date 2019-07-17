@@ -1,0 +1,10 @@
+{
+	entry = {
+		bundle = SoundLock;
+		cell = PSLinkCell;
+		detail = "SoundLockListController";
+		icon = "SoundLock.png";
+		isController = 1;
+		label = SoundLock;
+	};
+}

@@ -1,0 +1,188 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		8BCF9E1722DA0CBF0095848D /* entry.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = entry.plist; sourceTree = "<group>"; };
+		8BCF9E1822DA0CBF0095848D /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		8BCF9E1922DA0CBF0095848D /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		8BCF9E1A22DA0CBF0095848D /* Roxanne.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Roxanne.mm; sourceTree = "<group>"; };
+		8BCF9E1B22DA0CBF0095848D /* Roxanne_prefsheader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Roxanne_prefsheader.h; sourceTree = "<group>"; };
+		8BCF9E1C22DA0CBF0095848D /* RoxanneCamShutter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoxanneCamShutter.h; sourceTree = "<group>"; };
+		8BCF9E1D22DA0CBF0095848D /* RoxanneCamShutter.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RoxanneCamShutter.mm; sourceTree = "<group>"; };
+		8BCF9E1E22DA0CBF0095848D /* RoxanneFolders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoxanneFolders.h; sourceTree = "<group>"; };
+		8BCF9E1F22DA0CBF0095848D /* RoxanneFolders.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RoxanneFolders.mm; sourceTree = "<group>"; };
+		8BCF9E2022DA0CBF0095848D /* RoxanneFoldersClosed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoxanneFoldersClosed.h; sourceTree = "<group>"; };
+		8BCF9E2122DA0CBF0095848D /* RoxanneFoldersClosed.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RoxanneFoldersClosed.mm; sourceTree = "<group>"; };
+		8BCF9E2222DA0CBF0095848D /* RoxanneKB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoxanneKB.h; sourceTree = "<group>"; };
+		8BCF9E2322DA0CBF0095848D /* RoxanneKB.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RoxanneKB.mm; sourceTree = "<group>"; };
+		8BCF9E2422DA0CBF0095848D /* RoxanneLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoxanneLock.h; sourceTree = "<group>"; };
+		8BCF9E2522DA0CBF0095848D /* RoxanneLock.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RoxanneLock.mm; sourceTree = "<group>"; };
+		8BCF9E2622DA0CBF0095848D /* RoxanneLSCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoxanneLSCode.h; sourceTree = "<group>"; };
+		8BCF9E2722DA0CBF0095848D /* RoxanneLSCode.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RoxanneLSCode.mm; sourceTree = "<group>"; };
+		8BCF9E2822DA0CBF0095848D /* RoxanneRinger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoxanneRinger.h; sourceTree = "<group>"; };
+		8BCF9E2922DA0CBF0095848D /* RoxanneRinger.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RoxanneRinger.mm; sourceTree = "<group>"; };
+		8BCF9E2A22DA0CBF0095848D /* RoxanneScreenShot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoxanneScreenShot.h; sourceTree = "<group>"; };
+		8BCF9E2B22DA0CBF0095848D /* RoxanneScreenShot.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RoxanneScreenShot.mm; sourceTree = "<group>"; };
+		8BCF9E2C22DA0CBF0095848D /* RoxanneTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoxanneTP.h; sourceTree = "<group>"; };
+		8BCF9E2D22DA0CBF0095848D /* RoxanneTP.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RoxanneTP.mm; sourceTree = "<group>"; };
+		8BCF9E2E22DA0CBF0095848D /* RoxanneUnlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoxanneUnlock.h; sourceTree = "<group>"; };
+		8BCF9E2F22DA0CBF0095848D /* RoxanneUnlock.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RoxanneUnlock.mm; sourceTree = "<group>"; };
+		8BCF9E3022DA0CBF0095848D /* RoxanneVol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoxanneVol.h; sourceTree = "<group>"; };
+		8BCF9E3122DA0CBF0095848D /* RoxanneVol.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RoxanneVol.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		8BCF9E1122DA0CBF0095848D = {
+			isa = PBXGroup;
+			children = (
+				8BCF9E1722DA0CBF0095848D /* entry.plist */,
+				8BCF9E1822DA0CBF0095848D /* Makefile */,
+				8BCF9E1922DA0CBF0095848D /* Resources */,
+				8BCF9E1A22DA0CBF0095848D /* Roxanne.mm */,
+				8BCF9E1B22DA0CBF0095848D /* Roxanne_prefsheader.h */,
+				8BCF9E1C22DA0CBF0095848D /* RoxanneCamShutter.h */,
+				8BCF9E1D22DA0CBF0095848D /* RoxanneCamShutter.mm */,
+				8BCF9E1E22DA0CBF0095848D /* RoxanneFolders.h */,
+				8BCF9E1F22DA0CBF0095848D /* RoxanneFolders.mm */,
+				8BCF9E2022DA0CBF0095848D /* RoxanneFoldersClosed.h */,
+				8BCF9E2122DA0CBF0095848D /* RoxanneFoldersClosed.mm */,
+				8BCF9E2222DA0CBF0095848D /* RoxanneKB.h */,
+				8BCF9E2322DA0CBF0095848D /* RoxanneKB.mm */,
+				8BCF9E2422DA0CBF0095848D /* RoxanneLock.h */,
+				8BCF9E2522DA0CBF0095848D /* RoxanneLock.mm */,
+				8BCF9E2622DA0CBF0095848D /* RoxanneLSCode.h */,
+				8BCF9E2722DA0CBF0095848D /* RoxanneLSCode.mm */,
+				8BCF9E2822DA0CBF0095848D /* RoxanneRinger.h */,
+				8BCF9E2922DA0CBF0095848D /* RoxanneRinger.mm */,
+				8BCF9E2A22DA0CBF0095848D /* RoxanneScreenShot.h */,
+				8BCF9E2B22DA0CBF0095848D /* RoxanneScreenShot.mm */,
+				8BCF9E2C22DA0CBF0095848D /* RoxanneTP.h */,
+				8BCF9E2D22DA0CBF0095848D /* RoxanneTP.mm */,
+				8BCF9E2E22DA0CBF0095848D /* RoxanneUnlock.h */,
+				8BCF9E2F22DA0CBF0095848D /* RoxanneUnlock.mm */,
+				8BCF9E3022DA0CBF0095848D /* RoxanneVol.h */,
+				8BCF9E3122DA0CBF0095848D /* RoxanneVol.mm */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		8BCF9E1622DA0CBF0095848D /* roxanne */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 8BCF9E3222DA0CBF0095848D /* Build configuration list for PBXLegacyTarget "roxanne" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "/Users/developer/Downloads/Monarch-master/Monarch/monarchtweak/roxanne";
+			dependencies = (
+			);
+			name = roxanne;
+			passBuildSettingsInEnvironment = 1;
+			productName = roxanne;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		8BCF9E1222DA0CBF0095848D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 8BCF9E1522DA0CBF0095848D /* Build configuration list for PBXProject "roxanne" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8BCF9E1122DA0CBF0095848D;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8BCF9E1622DA0CBF0095848D /* roxanne */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		8BCF9E1322DA0CBF0095848D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		8BCF9E1422DA0CBF0095848D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		8BCF9E3322DA0CBF0095848D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = roxanne;
+			};
+			name = Debug;
+		};
+		8BCF9E3422DA0CBF0095848D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = roxanne;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8BCF9E1522DA0CBF0095848D /* Build configuration list for PBXProject "roxanne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BCF9E1322DA0CBF0095848D /* Debug */,
+				8BCF9E1422DA0CBF0095848D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BCF9E3222DA0CBF0095848D /* Build configuration list for PBXLegacyTarget "roxanne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BCF9E3322DA0CBF0095848D /* Debug */,
+				8BCF9E3422DA0CBF0095848D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8BCF9E1222DA0CBF0095848D /* Project object */;
+}
