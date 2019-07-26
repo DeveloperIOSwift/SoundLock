@@ -38,11 +38,11 @@
 			<key>key</key>
 			<string>kLSCode</string>
 			<key>label</key>
-			<string>Passcode Sounds</string>
+			<string>Passcode key sounds</string>
 			<key>set</key>
 			<string>setAndPreview:forSpecifier:</string>
 			<key>title</key>
-			<string>Passcode Sounds</string>
+			<string>Passcode key sounds</string>
 			<key>titlesDataSource</key>
 			<string>getData:</string>
 			<key>valuesDataSource</key>

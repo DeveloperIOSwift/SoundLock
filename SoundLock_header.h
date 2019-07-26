@@ -13,12 +13,12 @@ BOOL kEnabled;
 //default sound switches 
 BOOL kUseDefaultLock;
 BOOL kUseDefaultLSCode;
-
+BOOL kUseDefaultRespring;
 //SoundLock Strings (for audio)
 NSString *kUnlock;
 NSString *kLock;
 NSString *kLSCode;
-
+NSString *kRespring;
 
 
 
@@ -26,30 +26,20 @@ HBPreferences *preferences;
 
 //Sound identifiers
 SystemSoundID unlockSound;
-
+SystemSoundID respringSound;
 
 //delete key file :P
 NSString *deleteKeyFile = [[NSBundle bundleWithPath:@"/System/Library/Audio/UISounds/"] pathForResource:@"key_press_delete" ofType:@"caf"];
 
 //volume control string :P
-#define volString [NSString stringWithFormat:@"/Library/Application Support/SoundLock/VolumeSounds/%@", kVolumeSounds]
+#define respringSoundString [NSString stringWithFormat:@"/Library/Application Support/SoundLock/LockSounds/BootSounds/%@", kRespring]
 
 AVAudioSession *session = [AVAudioSession sharedInstance];
 
 //interfaces 
 
-@interface CUCaptureController : NSObject
-+(id)sharedInstance;
--(BOOL)isCapturingVideo;
--(BOOL)isCapturingBurst;
-@end
 
-@interface CAMViewfinderViewController : UIViewController
--(BOOL)isCapturingPhoto;
-@end
 
-@interface SBHUDView : UIView
-@end
 
 
 @interface SBMediaController : NSObject
@@ -57,8 +47,11 @@ AVAudioSession *session = [AVAudioSession sharedInstance];
 -(BOOL)isPlaying;
 @end
 
-@interface SBFolderController : NSObject 
--(BOOL)isOpen;
+@interface SBRespringController : NSObject
+    +(SBRespringController *)sharedInstance;
+    -(void)applicationDidFinishLaunching:(id)arg1 ;
+
+-(BOOL)isRespring;
 @end
 
 @interface SBLockScreenViewControllerBase : UIViewController
@@ -82,7 +75,3 @@ AVAudioSession *session = [AVAudioSession sharedInstance];
 +(id)key;
 @end
 
-@interface UIKeyboardLayoutStar : UIView
-@property (nonatomic, copy) NSString * localizedInputKey;
--(void)setPlayKeyClickSoundOn:(int)arg1;
-@end

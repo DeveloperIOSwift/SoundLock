@@ -24,11 +24,11 @@
 			<key>key</key>
 			<string>kUnlock</string>
 			<key>label</key>
-			<string>Unlock Sounds</string>
+			<string>Open screen sounds</string>
 			<key>set</key>
 			<string>setAndPreview:forSpecifier:</string>
 			<key>title</key>
-			<string>Unlock Sounds</string>
+			<string>Open screen sounds</string>
 			<key>titlesDataSource</key>
 			<string>getData:</string>
 			<key>valuesDataSource</key>

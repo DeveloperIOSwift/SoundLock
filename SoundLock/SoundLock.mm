@@ -48,6 +48,7 @@ self.navigationController.navigationItem.largeTitleDisplayMode = UINavigationIte
     popController.barButtonItem = self.navigationItem.rightBarButtonItem;
  
 }
+    
 -(void)respring {
   //thanks to @skittyblock no more system deprecation errors :P
   NSTask *task = [[[NSTask alloc] init] autorelease];

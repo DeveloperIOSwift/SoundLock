@@ -66,6 +66,14 @@
 			<key>label</key>
 			<string>Passcode key sounds</string>
 		</dict>
+        <dict>
+            <key>cell</key>
+            <string>PSLinkListCell</string>
+            <key>detail</key>
+            <string>SoundLockRespringListController</string>
+            <key>label</key>
+            <string>Respring sounds</string>
+        </dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>

@@ -1,16 +1,19 @@
-#import "SoundLockUnlock.h"
+#import "SoundLockRespring.h"
 
-@implementation SoundLockUnlockListController
+/* Roxanne a tweak to customize UISounds with ease! 
+Created by J.K. Hayslip (@iKilledAppl3) March 25th, 2019
+All rights reserved. */
 
+@implementation SoundLockRespringListController
 
 + (NSString *)hb_specifierPlist {
 
-    return @"SoundLockUnlock";
+    return @"SoundLockRespring";
     
 }
 
 -(void)listThatDir {
-   directoryContent = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Library/Application Support/SoundLock/LockSounds/Unlock/" error:NULL];
+   directoryKBContent = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Library/Application Support/SoundLock/LockSounds/BootSounds/" error:NULL];
 }
 
 -(void)loadView {
@@ -20,10 +23,11 @@
 
 }
 
+
 - (void)setAndPreview:(id)value forSpecifier:(id)specifier {
 // Sample sound and set
     AudioServicesDisposeSystemSoundID(soundSelected);
-    AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Library/Application Support/SoundLock/LockSounds/Unlock/%@",value]],&soundSelected);
+    AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Library/Application Support/SoundLock/LockSounds/BootSounds/%@",value]],&soundSelected);
     AudioServicesPlaySystemSound(soundSelected);
     
     [super setPreferenceValue:value specifier:specifier];
@@ -32,7 +36,7 @@
 - (NSArray *)getData:(id)target {
 NSMutableArray *listing = [NSMutableArray arrayWithObjects:@"None",nil];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"pathExtension != ''"];
-    for (NSURL *fileURL in [directoryContent filteredArrayUsingPredicate:predicate]) {
+    for (NSURL *fileURL in [directoryKBContent filteredArrayUsingPredicate:predicate]) {
 	[listing addObject:fileURL];
     }
     return listing;
@@ -50,7 +54,7 @@ NSMutableArray *listing = [NSMutableArray arrayWithObjects:@"None",nil];
 - (NSArray *)getValues:(id)target{
 	NSMutableArray *listing = [NSMutableArray arrayWithObjects:@"None",nil];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"pathExtension != ''"];
-  
+    
     return listing;
 }
 @end
