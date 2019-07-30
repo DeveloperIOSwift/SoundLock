@@ -1,7 +1,7 @@
 Package: com.yakir.soundlock
 Name: SoundLock
 Depends: mobilesubstrate, ws.hbang.common, firmware (>= 10.0)
-Version: 1.1
+Version: 1.2
 Architecture: iphoneos-arm
 Description: SoundLock An awesome UISounds Lock Customizer !
 Maintainer: DevelopApple
