@@ -22,32 +22,28 @@ SBMediaController *mediaController = [%c(SBMediaController) sharedInstance];
 }
 %end
 %end
+%group iOS12
 %hook SpringBoard
--(void)applicationDidFinishLaunching:(id)arg1 {
+-(void)applicationDidFinishLaunching:(id)application {
 if (kEnabled && ![[%c(SBRespringController) sharedInstance] isRespring] && ! kUseDefaultRespring) {
 
 %orig;
 
 // Put custom sound code here like every other thing :P
-{
+
 respringSound = 0;
 
 AudioServicesDisposeSystemSoundID(respringSound);
 
 AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Library/Application Support/SoundLock/LockSounds/BootSounds/%@",kRespring]],& respringSound);
 AudioServicesPlaySystemSound(respringSound);
-}
 
 }
-else {
-%orig;
-}
-
 }
 %end
+%end
 
-
-
+%group iOS12
 %hook SBDashBoardViewController
 -(void)prepareForUIUnlock {
 
@@ -72,7 +68,7 @@ else {
 	
 }
 %end
-
+%end
 %hook SBUIPasscodeLockViewBase 
 
 -(void)_sendDelegateKeypadKeyDown {
@@ -115,7 +111,7 @@ if (kEnabled && !kUseDefaultLSCode) {
 	if (kEnabled && ![[%c(SBLockScreenManager) sharedInstance] isUILocked] && ! kUseDefaultLock) {
 
 
-                {
+
             SystemSoundID selectedSound = 0;
 
 			AudioServicesDisposeSystemSoundID(selectedSound);
@@ -123,13 +119,11 @@ if (kEnabled && !kUseDefaultLSCode) {
 		    AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Library/Application Support/SoundLock/LockSounds/Lock/%@",kLock]],&selectedSound);
 			AudioServicesPlaySystemSound(selectedSound);
 
-      }
+
 		
 }
 	
-	else {
-		%orig;
-	}
+
 }
 %end
 %end
@@ -141,20 +135,18 @@ if (kEnabled && !kUseDefaultLSCode) {
 
 
 
-              { SystemSoundID selectedSound = 0;
+              SystemSoundID selectedSound = 0;
 
 			AudioServicesDisposeSystemSoundID(selectedSound);
 
 		    AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Library/Application Support/SoundLock/LockSounds/Lock/%@",kLock]],&selectedSound);
 			AudioServicesPlaySystemSound(selectedSound);
 
-      }
+
 		
 }
 	
-	else {
-		%orig;
-	}
+
 }
 %end	
 %end	
