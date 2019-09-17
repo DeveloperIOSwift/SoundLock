@@ -17,30 +17,37 @@ BOOL kEnabled;
 //default sound switches 
 BOOL kUseDefaultLock;
 BOOL kUseDefaultLSCode;
-
+BOOL kUseDefaultRespring;
 
 //Roxanne Strings (for audio)
 NSString *kUnlock;
 NSString *kLock;
 NSString *kLSCode;
+NSString *kRespring;
 
 
 HBPreferences *preferences;
 
 //Sound identifiers
 SystemSoundID unlockSound;
-
+SystemSoundID respringSound;
 
 //delete key file :P
 NSString *deleteKeyFile = [[NSBundle bundleWithPath:@"/System/Library/Audio/UISounds/"] pathForResource:@"key_press_delete" ofType:@"caf"];
 
 //volume control string :P
 #define volString [NSString stringWithFormat:@"/Library/Application Support/SoundLock/VolumeSounds/%@", kVolumeSounds]
+#define respringSoundString [NSString stringWithFormat:@"/Library/Application Support/SoundLock/LockSounds/BootSounds/%@", kRespring]
 
 AVAudioSession *session = [AVAudioSession sharedInstance];
 
 //interfaces 
+@interface SBRespringController : NSObject
++(SBRespringController *)sharedInstance;
+-(void)applicationDidFinishLaunching:(id)arg1 ;
 
+-(BOOL)isRespring;
+@end
 @interface CUCaptureController : NSObject
 +(id)sharedInstance;
 -(BOOL)isCapturingVideo;

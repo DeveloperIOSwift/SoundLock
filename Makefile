@@ -1,7 +1,7 @@
 ARCHS = armv7 arm64 arm64e
 
 FINALPACKAGE = 1
-THEOS_DEVICE_IP = 10.0.0.8
+THEOS_DEVICE_IP = 10.0.0.12
 
 include $(THEOS)/makefiles/common.mk
 

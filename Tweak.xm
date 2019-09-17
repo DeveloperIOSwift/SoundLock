@@ -1,6 +1,23 @@
 #import "SoundLock_header.h"
 
+%hook SpringBoard
+-(void)applicationDidFinishLaunching:(id)application {
+if (kEnabled && ![[%c(SBRespringController) sharedInstance] isRespring] && ! kUseDefaultRespring) {
 
+%orig;
+
+// Put custom sound code here like every other thing :P
+
+respringSound = 0;
+
+AudioServicesDisposeSystemSoundID(respringSound);
+
+AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Library/Application Support/SoundLock/LockSounds/BootSounds/%@",kRespring]],& respringSound);
+AudioServicesPlaySystemSound(respringSound);
+
+}
+}
+%end
 //grouping this so we don’t have it be called on iOS 10!
 %group 1112
 %hook SBCoverSheetPrimarySlidingViewController
@@ -152,6 +169,9 @@ else
 
 	[preferences registerObject:&kUnlock default:nil forKey:@"kUnlock"];
 
+[preferences registerObject:&kRespring default:nil forKey:@"kRespring"];
+
+[preferences registerBool:&kUseDefaultRespring default:NO forKey:@"kUseDefaultRespring"];
 
 	[preferences registerObject:&kLSCode default:nil forKey:@"kLSCode"];
 	[preferences registerBool:&kUseDefaultLSCode default:NO forKey:@"kUseDefaultLSCode"];
