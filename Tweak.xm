@@ -1,8 +1,5 @@
 #import "SoundLock_header.h"
 
-SBMediaController *mediaController = [%c(SBMediaController) sharedInstance];
-//CUCaptureController *captureController = [%c(CUCaptureController) sharedInstance];
-//&& !captureController.isCapturingVideo && !captureController.isCapturingBurst) {
 
 //grouping this so we don’t have it be called on iOS 10!
 %group 1112
@@ -22,43 +19,19 @@ SBMediaController *mediaController = [%c(SBMediaController) sharedInstance];
 }
 %end
 %end
-%group iOS12
-%hook SpringBoard
--(void)applicationDidFinishLaunching:(id)application {
-if (kEnabled && ![[%c(SBRespringController) sharedInstance] isRespring] && ! kUseDefaultRespring) {
-
-%orig;
-
-// Put custom sound code here like every other thing :P
-
-respringSound = 0;
-
-AudioServicesDisposeSystemSoundID(respringSound);
-
-AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Library/Application Support/SoundLock/LockSounds/BootSounds/%@",kRespring]],& respringSound);
-AudioServicesPlaySystemSound(respringSound);
-
-}
-}
-%end
-%end
-
-%group iOS12
+ 
 %hook SBDashBoardViewController
 -(void)prepareForUIUnlock {
 
 	if (kEnabled) {
          	%orig;
 
-
-
-               {
                            unlockSound = 0;
 
 			     AudioServicesDisposeSystemSoundID(unlockSound);
 				AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Library/Application Support/SoundLock/LockSounds/Unlock/%@", kUnlock]],& unlockSound);
 				AudioServicesPlaySystemSound(unlockSound);
-		}
+
 
       }
 	
@@ -68,7 +41,7 @@ AudioServicesPlaySystemSound(respringSound);
 	
 }
 %end
-%end
+
 %hook SBUIPasscodeLockViewBase 
 
 -(void)_sendDelegateKeypadKeyDown {
@@ -77,7 +50,6 @@ if (kEnabled && !kUseDefaultLSCode) {
         %orig;
 
 
-                {
             SystemSoundID selectedSound = 0;
 
 			AudioServicesDisposeSystemSoundID(selectedSound);
@@ -85,8 +57,7 @@ if (kEnabled && !kUseDefaultLSCode) {
 		    AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:[NSString stringWithFormat:@"/Library/Application Support/SoundLock/LockSounds/LSPasscode/%@",kLSCode]],&selectedSound);
 			AudioServicesPlaySystemSound(selectedSound);
 
-      }
-		
+
 }
 
 	
@@ -123,7 +94,9 @@ if (kEnabled && !kUseDefaultLSCode) {
 		
 }
 	
-
+	else {
+		%orig;
+	}
 }
 %end
 %end
@@ -135,7 +108,7 @@ if (kEnabled && !kUseDefaultLSCode) {
 
 
 
-              SystemSoundID selectedSound = 0;
+            SystemSoundID selectedSound = 0;
 
 			AudioServicesDisposeSystemSoundID(selectedSound);
 
@@ -143,13 +116,15 @@ if (kEnabled && !kUseDefaultLSCode) {
 			AudioServicesPlaySystemSound(selectedSound);
 
 
-		
 }
 	
-
+	else {
+		%orig;
+	}
 }
 %end	
 %end	
+
 
 
 extern NSString *const HBPreferencesDidChangeNotification;
@@ -170,17 +145,13 @@ else
 }
  
 %init(_ungrouped);
-
+ 
     preferences = [[HBPreferences alloc] initWithIdentifier:@"com.yakir.soundlock"];
 
 	[preferences registerBool:&kEnabled default:NO forKey:@"kEnabled"];
 
-[preferences registerObject:&kRespring default:nil forKey:@"kRespring"];
+	[preferences registerObject:&kUnlock default:nil forKey:@"kUnlock"];
 
-[preferences registerBool:&kUseDefaultRespring default:NO forKey:@"kUseDefaultRespring"];
-
-
-[preferences registerObject:&kUnlock default:nil forKey:@"kUnlock"];
 
 	[preferences registerObject:&kLSCode default:nil forKey:@"kLSCode"];
 	[preferences registerBool:&kUseDefaultLSCode default:NO forKey:@"kUseDefaultLSCode"];
